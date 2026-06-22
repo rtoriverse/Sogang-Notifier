@@ -1,0 +1,37 @@
+name: Daily Sogang Main Site Check (JS-rendered)
+
+on:
+  schedule:
+    - cron: "10 23 * * *"   # 1단계 스크립트랑 10분 간격으로
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install playwright requests
+          playwright install chromium --with-deps
+
+      - name: Run main site checker
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python check_notices_main_site.py
+
+      - name: Commit updated seen file
+        run: |
+          git config user.name "sogang-notice-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add seen_posts_main.json
+          git diff --staged --quiet || git commit -m "update seen posts (main site)"
+          git push
