@@ -1,0 +1,24 @@
+name: Daily Schedule Notify (6am KST)
+
+on:
+  schedule:
+    - cron: "0 21 * * *"   # UTC 21:00 = KST 다음날 06:00
+  workflow_dispatch: {}
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Send today's schedule
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python schedule-bot/daily_schedule_notify.py
