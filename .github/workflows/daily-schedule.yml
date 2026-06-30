@@ -1,8 +1,6 @@
 name: Daily Schedule Notify (6am KST)
 
 on:
-  schedule:
-    - cron: "0 21 * * *"   # UTC 21:00 = KST 다음날 06:00
   workflow_dispatch: {}
 
 jobs:

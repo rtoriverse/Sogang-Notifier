@@ -1,8 +1,6 @@
 name: Daily Sogang Main Site Check (JS-rendered)
 
 on:
-  schedule:
-    - cron: "10 23 * * *"   # 1단계 스크립트랑 10분 간격으로
   workflow_dispatch: {}
 
 permissions:
