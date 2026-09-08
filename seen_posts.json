@@ -12,6 +12,7 @@
     "939181"
   ],
   "https://liberalarts.sogang.ac.kr/front/cmsboardlist.do?siteId=liberalarts&bbsConfigFK=4066": [
+    "940524",
     "939970",
     "938575",
     "937525",
@@ -30,8 +31,7 @@
     "930223",
     "929808",
     "929285",
-    "928348",
-    "927529"
+    "928348"
   ],
   "https://scc.sogang.ac.kr/front/cmsboardlist.do?siteId=sogangiis&bbsConfigFK=7972": [
     "929527",
@@ -39,6 +39,7 @@
     "929237"
   ],
   "https://creative.sogang.ac.kr/feed/": [
+    "https://creative.sogang.ac.kr/?p=46998",
     "https://creative.sogang.ac.kr/?p=46995",
     "https://creative.sogang.ac.kr/?p=46985",
     "https://creative.sogang.ac.kr/?p=46981",
@@ -47,7 +48,6 @@
     "https://creative.sogang.ac.kr/?p=46950",
     "https://creative.sogang.ac.kr/?p=46947",
     "https://creative.sogang.ac.kr/?p=46943",
-    "https://creative.sogang.ac.kr/?p=46940",
-    "https://creative.sogang.ac.kr/?p=46932"
+    "https://creative.sogang.ac.kr/?p=46940"
   ]
 }
